@@ -26,7 +26,7 @@ public class SecurityConfig {
                 .csrf().disable() // (2)
                 .authorizeHttpRequests((authorize) -> authorize
                 .requestMatchers("/publico/**").permitAll()
-                //.requestMatchers("/privado/**").hasRole("ADMIN")
+                .requestMatchers("/privado/v1/admin/**").hasRole("ADMIN")
                 .requestMatchers("/privado/**").authenticated()
                 .anyRequest().authenticated()
                 )
